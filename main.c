@@ -29,6 +29,8 @@ int main(){
 
     float investimento = 0.0;
 
+    float total = 0.0;
+
     printf("Relatorio:\n""=============================================================================\n");
 
     printf("%-20s%-20s%-20s%-20s%-20s%-20s\n", "Comodo", "Largura", "Comprimento", "TotalM2", "ValorM2", "Investimento");
@@ -36,13 +38,13 @@ int main(){
 
     for(int i = 0; i < quantidadeComodo; i++){
         investimento = comodos[i].metrosQuadrados * comodos[i].valorPiso;
-        comodos[i].metrosQuadrados = comodos[i].largura * comodos[i].comprimento;
-        printf("%-20c%-20d%-20d%-20d%-20.2f%-20.2f\n", i + 65, comodos[i].largura, comodos[i].comprimento, comodos[i].metrosQuadrados, comodos[i].valorPiso, investimento);
-
+        // comodos[i].metrosQuadrados = comodos[i].largura * comodos[i].comprimento;
+        printf("%-20c%-20.2f%-20.2f%-20.2f%-20.2f%-20.2f\n", i + 65, comodos[i].largura, comodos[i].comprimento, comodos[i].metrosQuadrados, comodos[i].valorPiso, investimento);
+        total += investimento;
         investimento = 0.0;
     }
 
-    printf("=============================================================================================\n");
+    printf("=============================================================================================\n Total: R$ %.2f reais", total);
 
 
     return 0;
